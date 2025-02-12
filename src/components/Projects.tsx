@@ -1,22 +1,22 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const projects = [
   {
     title: "E-commerce Platform",
     description: "A fully responsive online store with advanced filtering and search capabilities",
-    image: "/placeholder.JPG?height=200&width=300",
+    image: "/shahid.JPG", // Corrected path
   },
   {
     title: "Social Media Dashboard",
     description: "Real-time analytics dashboard for social media management",
-    image: "/placeholders.JPG?height=200&width=300",
+    image: "/umair.JPG", // Corrected path (or /placeholders.JPG if you have a different image)
   },
   {
     title: "AI-powered Chatbot",
     description: "Intelligent customer service chatbot with natural language processing",
-    image: "/placeholde.JPG?height=200&width=300",
+    image: "/zahid.JPG", // Corrected path
   },
-]
+];
 
 export default function Projects() {
   return (
@@ -27,11 +27,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
               <Image
-                src={project.image || "/placeholder.svg"}
+                src={project.image || "/placeholder.svg"} // Fallback image if project.image is missing
                 alt={project.title}
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
+                width={300}  // Or use layout="fill" or "responsive" if you prefer
+                height={200} // Or use layout="fill" or "responsive" if you prefer
+                className="w-full h-48 object-cover" // object-cover to maintain aspect ratio
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -42,6 +42,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
